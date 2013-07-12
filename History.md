@@ -1,7 +1,8 @@
 ## History
 
 - v2.3.0 July 12, 2013
-	- Split out `balUtilEvents.EventEmitterEnhanced` into [event-emitter-grouped](https://github.com/bevry/event-emitter-grouped)
+	- Split out from [bal-util](https://github.com/balupton/bal-util)
+	- Added support for splat arguments
 
 - v2.2.0 June 24, 2013
 	- Split out `balUtilModules` into [safeps](https://github.com/bevry/safeps)

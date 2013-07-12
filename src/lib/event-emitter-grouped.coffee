@@ -2,7 +2,6 @@
 EventEmitter = require('events').EventEmitter
 ambi = require('ambi')
 {TaskGroup} = require('taskgroup')
-{extractOptsAndCallback} = require('extract-opts')
 
 # Group
 # Allows you to emit events in serial or parallel
@@ -11,7 +10,7 @@ class EventEmitterGrouped extends EventEmitter
 	# Get Listener Group
 	# Fetch the listeners for a particular event as a task group
 	# next(err,results)
-	getListenerGroup: (eventName,opts...,next) ->
+	getListenerGroup: (eventName,args...,next) ->
 		# Get listeners
 		me = @
 		listeners = @listeners(eventName)
@@ -37,7 +36,7 @@ class EventEmitterGrouped extends EventEmitter
 			# Bind to the task
 			tasks.addTask (complete) ->
 				# Fire the listener, treating the callback as optional
-				ambi(listener, opts..., complete)
+				ambi(listener, args..., complete)
 
 		# Return
 		return tasks
