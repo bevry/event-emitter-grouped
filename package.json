@@ -1,67 +1,44 @@
 {
-	"name": "bal-util",
-	"version": "2.2.0",
-	"description": "Common utility functions for Node.js used and maintained by Benjamin Lupton",
-	"homepage": "https://github.com/balupton/bal-util",
+	"name": "event-emitter-grouped",
+	"version": "2.3.0",
+	"description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
+	"homepage": "https://github.com/bevry/event-emitter-grouped",
 	"keywords": [
-		"javascript",
-		"flow",
-		"control",
-		"async",
-		"sync",
-		"tasks",
-		"batch",
-		"utility",
-		"util",
-		"utilities",
-		"paths",
-		"path",
-		"events",
-		"event",
-		"module",
-		"modules",
-		"compare",
-		"comparison",
-		"html"
+		"event", "events", "emitter", "eventemitter", "async", "sync", "parallel", "serial", "flow", "completion", "callback"
 	],
-	"author": "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
 	"maintainers": [
 		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
 	],
 	"contributors": [
 		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-		"Sean Fridman <fridman@mail.sfsu.edu> (https://github.com/sfrdmn)"
+		"Johny Jose <johny@playlyfe.com>"
 	],
 	"bugs": {
-		"url": "https://github.com/balupton/bal-util/issues"
+		"url": "https://github.com/bevry/event-emitter-grouped/issues"
 	},
 	"repository" : {
 		"type": "git",
-		"url": "http://github.com/balupton/bal-util.git"
+		"url": "http://github.com/bevry/event-emitter-grouped.git"
 	},
 	"engines" : {
 		"node": ">=0.4"
 	},
 	"dependencies": {
 		"ambi": "~2.0.0",
-		"eachr": "~2.0.2",
-		"extendr": "~2.0.1",
-		"safefs": "~3.0.1",
-		"taskgroup": "~3.1.1",
-		"typechecker": "~2.0.1",
-		"extract-opts": "~2.2.0"
+		"taskgroup": "~3.1.2"
 	},
 	"devDependencies": {
 		"coffee-script": "~1.6.2",
 		"joe": "~1.2.0",
-		"joe-reporter-console": "~1.2.0",
+		"joe-reporter-console": "~1.2.1",
 		"chai": "~1.7.0"
 	},
 	"directories": {
 		"lib": "./out/lib"
 	},
 	"scripts": {
-		"test": "node ./out/test/everything-test.js"
+		"test": "node ./out/test/event-emitter-grouped-test.js"
 	},
-	"main": "./out/lib/balutil"
+	"main": "./out/lib/event-emitter-grouped.js"
 }
