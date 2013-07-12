@@ -32,7 +32,7 @@ emitter.emitSerial('hello', function(err){
 
 	// Emit the events in parallel (all at once)
 	console.log('hello in parallel started');
-	emitter.emitSerial('hello', function(err){
+	emitter.emitParallel('hello', function(err){
 		console.log('hello in parallel finished');
 	});
 });
@@ -47,7 +47,7 @@ hello in serial finished
 hello in parallel started
 	vip started and finished
 	async started
-	async finished
 	sync started and finished
+	async finished
 hello in parallel finished
 */
