@@ -1,0 +1,29 @@
+{
+  "name": "event-emitter-grouped",
+  "version": "2.3.1",
+  "license": "MIT",
+  "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
+  "keywords": [
+    "event",
+    "events",
+    "emitter",
+    "eventemitter",
+    "async",
+    "sync",
+    "parallel",
+    "serial",
+    "flow",
+    "completion",
+    "callback"
+  ],
+  "dependencies": {
+    "bevry/ambi": "master",
+    "bevry/taskgroup": "master",
+    "bevry/events-browser": "master"
+  },
+  "demo": "https://github.com/bevry/event-emitter-grouped",
+  "main": "./out/lib/event-emitter-grouped.js",
+  "scripts": [
+    "./out/lib/event-emitter-grouped.js"
+  ]
+}

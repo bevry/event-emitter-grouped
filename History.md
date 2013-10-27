@@ -1,5 +1,8 @@
 ## History
 
+- v2.3.1 October 27, 2013
+	- Re-packaged
+
 - v2.3.0 July 12, 2013
 	- Split out from [bal-util](https://github.com/balupton/bal-util)
 	- Added support for splat arguments
