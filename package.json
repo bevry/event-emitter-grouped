@@ -1,7 +1,7 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "https://github.com/bevry/event-emitter-grouped",
   "license": {
@@ -46,8 +46,8 @@
     "node": ">=0.4"
   },
   "dependencies": {
-    "ambi": "~2.1.5",
-    "taskgroup": "~3.2.4"
+    "ambi": "~2.1.6",
+    "taskgroup": "~3.3.1"
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
