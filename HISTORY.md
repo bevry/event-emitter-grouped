@@ -1,8 +1,12 @@
 # History
 
+- v2.3.3 January 30, 2014
+	- Possible fix for priorities on events bound by once
+	- TaskGroup and Tasks are now named by default
+
 - v2.3.2 November 6, 2013
-	- Updated dependencies
 	- Dropped component.io and bower support, just use ender or browserify
+	- Updated dependencies
 
 - v2.3.1 October 27, 2013
 	- Re-packaged

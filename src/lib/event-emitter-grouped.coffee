@@ -13,30 +13,43 @@ class EventEmitterGrouped extends events.EventEmitter
 	getListenerGroup: (eventName,args...,next) ->
 		# Get listeners
 		me = @
-		listeners = @listeners(eventName)
 
 		# Prepare tasks
-		tasks = new TaskGroup().once('complete', next)
+		tasks = new TaskGroup("EventEmitterGrouped for #{eventName}").once('complete', next)
 
-		# Sort the listeners by highest priority first
-		listeners.sort (a,b) ->
-			return (b.priority or 0) - (a.priority or 0)
+		# Convert the listeners into objects that we can use
+		listenerObjects = @listeners(eventName).slice().map (listener) ->
+			# Prepare
+			listenerObject = {}
 
-		# Add the tasks for the listeners
-		listeners.forEach (listener) ->
 			# The `once` method will actually wrap around the original listener, which isn't what we want for the introspection
 			# So we must pass fireWithOptionalCallback an array of the method to fire, and the method to introspect
 			# https://github.com/bevry/docpad/issues/462
 			# https://github.com/joyent/node/commit/d1b4dcd6acb1d1c66e423f7992dc6eec8a35c544
-			if listener.listener
-				listener = [listener.bind(me), listener.listener]
+			if listener.listener  # this is a `once` thing
+				listenerObject.actual = listener.listener
+				listenerObject.fire   = [listener.bind(me), listener.listener]
 			else
-				listener = listener.bind(me)
+				listenerObject.actual = listener
+				listenerObject.fire   = listener.bind(me)
 
+			# Defaults
+			listenerObject.priority = listenerObject.actual.priority or 0
+			listenerObject.name     = listenerObject.name or "Untitled listener for [#{eventName}] with priority [#{listenerObject.priority}]"
+
+			# Return the new listenerObject
+			return listenerObject
+
+		# Sort the listeners by highest priority first
+		listenerObjects.sort (a,b) ->
+			return b.priority - a.priority
+
+		# Add the tasks for the listeners
+		listenerObjects.forEach (listenerObject) ->
 			# Bind to the task
-			tasks.addTask (complete) ->
+			tasks.addTask listenerObject.name, (complete) ->
 				# Fire the listener, treating the callback as optional
-				ambi(listener, args..., complete)
+				ambi(listenerObject.fire, args..., complete)
 
 		# Return
 		return tasks
