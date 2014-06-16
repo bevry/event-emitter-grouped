@@ -15,7 +15,7 @@ class EventEmitterGrouped extends events.EventEmitter
 		me = @
 
 		# Prepare tasks
-		tasks = new TaskGroup("EventEmitterGrouped for #{eventName}").once('complete', next)
+		tasks = new TaskGroup("EventEmitterGrouped for #{eventName}").done(next)
 
 		# Convert the listeners into objects that we can use
 		listenerObjects = @listeners(eventName).slice().map (listener) ->

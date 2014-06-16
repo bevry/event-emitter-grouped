@@ -31,7 +31,7 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 
 ## Install
 
-### [Node](http://nodejs.org/)
+### [NPM](http://npmjs.org/)
 - Use: `require('event-emitter-grouped')`
 - Install: `npm install --save event-emitter-grouped`
 
