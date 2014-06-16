@@ -1,11 +1,11 @@
 # Import
-events = if window? then require('events-browser') else require('events')
+{EventEmitter} = require('events')
 ambi = require('ambi')
 {TaskGroup} = require('taskgroup')
 
 # Group
 # Allows you to emit events in serial or parallel
-class EventEmitterGrouped extends events.EventEmitter
+class EventEmitterGrouped extends EventEmitter
 
 	# Get Listener Group
 	# Fetch the listeners for a particular event as a task group

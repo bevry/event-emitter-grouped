@@ -1,5 +1,8 @@
 # History
 
+## v2.4.1 June 16, 2014
+- Removed `events-browser` implied dep, as browserify shim now works
+
 ## v2.4.0 June 16, 2014
 - Updated dependencies
 
