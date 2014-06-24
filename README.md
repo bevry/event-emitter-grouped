@@ -38,7 +38,7 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 ### [Browserify](http://browserify.org/)
 - Use: `require('event-emitter-grouped')`
 - Install: `npm install --save event-emitter-grouped`
-- CDN URL: `//wzrd.in/bundle/event-emitter-grouped@2.4.1`
+- CDN URL: `//wzrd.in/bundle/event-emitter-grouped@2.4.2`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('event-emitter-grouped')`
