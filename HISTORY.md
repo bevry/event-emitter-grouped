@@ -1,6 +1,9 @@
 # History
 
-## v2.4.2 June 16, 2014
+## v2.4.3 June 24, 2014
+- Republish, seems last release didn't achieve what it should have, figured out what the issue was
+
+## v2.4.2 June 24, 2014
 - Republish, seems last release didn't achieve what it should have
 
 ## v2.4.1 June 16, 2014

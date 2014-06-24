@@ -1,7 +1,7 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "https://github.com/bevry/event-emitter-grouped",
   "license": {
@@ -15,7 +15,8 @@
     "gittip": "bevry",
     "flattr": "344188/balupton-on-Flattr",
     "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
   "keywords": [
     "event",
@@ -66,5 +67,8 @@
   "scripts": {
     "test": "node ./out/test/event-emitter-grouped-test.js"
   },
-  "main": "./out/lib/event-emitter-grouped.js"
+  "main": "./out/lib/event-emitter-grouped.js",
+  "cakeConfiguration": {
+    "COFFEE_SRC_PATH": "src"
+  }
 }
