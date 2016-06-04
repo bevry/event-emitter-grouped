@@ -72,7 +72,12 @@
         "esnext",
         "require",
         "const",
-        "let"
+        "let",
+        "rest",
+        "spread",
+        "classes",
+        "arrows",
+        "template strings"
       ]
     },
     {
