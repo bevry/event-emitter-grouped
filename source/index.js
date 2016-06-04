@@ -3,13 +3,29 @@ const {EventEmitter} = require('events')
 const {TaskGroup} = require('taskgroup')
 const ambi = require('ambi')
 
-// Group
-// Allows you to emit events in serial or parallel
+/**
+Events EventEmitter to allow you to execute events in serial or parallel.
+Made possible thanks to TaskGroup.
+
+Inherits from https://nodejs.org/dist/latest/docs/api/events.html#events_class_eventemitter
+
+Uses https://github.com/bevry/taskgroup
+
+@class EventEmitterGrouped
+@extends EventEmitter
+@constructor
+@access public
+*/
 class EventEmitterGrouped extends EventEmitter {
 
-	// Get Listener Group
-	// Fetch the listeners for a particular event as a task group
-	// next(err, results)
+	/**
+	Get a TaskGroup for a particular event.
+	For each listener, treat them as Tasks within a TaskGroup, and return the TaskGroup.
+	@param {string} eventName
+	@param {...*} args - the arguments to forward to each task, with the last one being a completion callback with signature `error, results`
+	@returns {TaskGroup}
+	@access public
+	*/
 	getListenerGroup (eventName, ...args) {
 		// Get listeners
 		const next = args.pop()
@@ -60,17 +76,30 @@ class EventEmitterGrouped extends EventEmitter {
 		return tasks
 	}
 
-	// Off
+	/**
+	Refer to EventEmitter#removeListener
+	https://nodejs.org/dist/latest/docs/api/events.html#events_emitter_removelistener_eventname_listener
+	@returns {*} whatever removeListener returns
+	@access public
+	*/
 	off (...args) {
 		return this.removeListener(...args)
 	}
 
-	// Emit Serial
+	/**
+	Runs the listener group for the event in serial mode (one at a time)
+	@param {...*} args - forwarded to {@link EventEmitterGrouped#getListenerGroup}
+	@returns {TaskGroup}
+	*/
 	emitSerial (...args) {
 		return this.getListenerGroup(...args).run()
 	}
 
-	// Emit Parallel
+	/**
+	Runs the listener group for the event in parallel mode (multiple at a time)
+	@param {...*} args - forwarded to {@link EventEmitterGrouped#getListenerGroup}
+	@returns {TaskGroup}
+	*/
 	emitParallel (...args) {
 		return this.getListenerGroup(...args).setConfig({concurrency: 0}).run()
 	}

@@ -65,7 +65,7 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 
 ``` javascript
 // Importer
-var EventEmitterGrouped = require('event-emitter-grouped').EventEmitterGrouped
+var EventEmitterGrouped = require('event-emitter-grouped')
 
 // Instantiate a new instance
 var emitter = new EventEmitterGrouped()
@@ -119,17 +119,7 @@ hello in parallel finished
 */
 ```
 
-
-### EventEmitterGrouped, extends [events.EventEmitter](http://nodejs.org/api/events.html#events_class_events_eventemitter)
-
-- `getListenerGroup(eventName, args..., next?)` - returns a [TaskGroup](https://github.com/bevry/taskgroup#files) where each listener is a task, ordered by the highest priority listeners first
-	- `eventName` is the event that we should get the listeners for
-	- `args...` is an optional set of arguments that should be passed to the listeners when they are executed
-	- `next` is an optional completion callback that will fire once all the tasks/listeners have compeleted
-- `off` - alias for [events.EventEmitter.prototype.removeListener](http://nodejs.org/api/events.html#events_emitter_removelistener_event_listener)
-- `emitSerial(eventName, args..., next?)` - fetch the listener group and execute it in serial
-- `emitParallel(eventName, args..., next?)` - fetch the listener group and execute it in parallel
-
+[Documentation.](http://rawgit.com/bevry/event-emitter-grouped/master/docs/)
 
 
 <!-- HISTORY/ -->

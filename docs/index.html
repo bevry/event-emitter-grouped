@@ -23,6 +23,51 @@
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
               
+                
+                <li><a
+                  href='#EventEmitterGrouped'
+                  class=" toggle-sibling">
+                  EventEmitterGrouped
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'>Instance members</li>
+                      
+                      <li><a
+                        href='#EventEmitterGrouped#getListenerGroup'
+                        class='regular pre-open'>
+                        #getListenerGroup
+                      </a></li>
+                      
+                      <li><a
+                        href='#EventEmitterGrouped#off'
+                        class='regular pre-open'>
+                        #off
+                      </a></li>
+                      
+                      <li><a
+                        href='#EventEmitterGrouped#emitSerial'
+                        class='regular pre-open'>
+                        #emitSerial
+                      </a></li>
+                      
+                      <li><a
+                        href='#EventEmitterGrouped#emitParallel'
+                        class='regular pre-open'>
+                        #emitParallel
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -32,6 +77,346 @@
       </div>
       <div class='fix-margin-3'>
         <div class='px2'>
+          
+            
+              <section class='py2 clearfix'>
+
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='EventEmitterGrouped'>
+      EventEmitterGrouped
+    </h2>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/bevry/event-emitter-grouped/blob/74edafbb00e671dfe577ed2e4ba0c0a6942e5642/./source/index.js#L19-L106'>
+      <span>./source/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Events EventEmitter to allow you to execute events in serial or parallel.
+Made possible thanks to TaskGroup.</p>
+<p>Inherits from <a href="https://nodejs.org/dist/latest/docs/api/events.html#events_class_eventemitter">https://nodejs.org/dist/latest/docs/api/events.html#events_class_eventemitter</a></p>
+<p>Uses <a href="https://github.com/bevry/taskgroup">https://github.com/bevry/taskgroup</a></p>
+
+
+  <div class='pre p1 fill-light'>EventEmitterGrouped()</div>
+
+  
+    <p>
+      Extends
+      
+        EventEmitter
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='keyline-bottom' id='EventEmitterGrouped#getListenerGroup'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>getListenerGroup</span>
+            <span class='quiet code space-right2'>(eventName, args)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
+
+  <p>Get a TaskGroup for a particular event.
+For each listener, treat them as Tasks within a TaskGroup, and return the TaskGroup.</p>
+
+
+  <div class='pre p1 fill-light'>getListenerGroup(eventName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, args: ...Any): TaskGroup</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>eventName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...Any)</code> the arguments to forward to each task, with the last one being a completion callback with signature 
+<code>error, results</code>
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>TaskGroup</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='EventEmitterGrouped#off'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>off</span>
+            <span class='quiet code space-right2'>(args)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
+
+  <p>Refer to EventEmitter#removeListener
+<a href="https://nodejs.org/dist/latest/docs/api/events.html#events_emitter_removelistener_eventname_listener">https://nodejs.org/dist/latest/docs/api/events.html#events_emitter_removelistener_eventname_listener</a></p>
+
+
+  <div class='pre p1 fill-light'>off(args: ...): Any</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Any</code>:
+        whatever removeListener returns
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='EventEmitterGrouped#emitSerial'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>emitSerial</span>
+            <span class='quiet code space-right2'>(args)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
+
+  <p>Runs the listener group for the event in serial mode (one at a time)</p>
+
+
+  <div class='pre p1 fill-light'>emitSerial(args: ...Any): TaskGroup</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...Any)</code> forwarded to 
+<a href="#EventEmitterGrouped#getListenerGroup">EventEmitterGrouped#getListenerGroup</a>
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>TaskGroup</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='EventEmitterGrouped#emitParallel'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>emitParallel</span>
+            <span class='quiet code space-right2'>(args)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
+
+  <p>Runs the listener group for the event in parallel mode (multiple at a time)</p>
+
+
+  <div class='pre p1 fill-light'>emitParallel(args: ...Any): TaskGroup</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...Any)</code> forwarded to 
+<a href="#EventEmitterGrouped#getListenerGroup">EventEmitterGrouped#getListenerGroup</a>
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>TaskGroup</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+            
           
         </div>
       </div>
