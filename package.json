@@ -1,7 +1,7 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "ssh://git@github.com/bevry/event-emitter-grouped",
   "license": "MIT",
@@ -95,7 +95,6 @@
   "main": "index.js",
   "browser": "es2015/index.js",
   "dependencies": {
-    "ambi": "^3.0.0",
     "editions": "^1.3.4",
     "taskgroup": "^5.0.0",
     "unbounded": "^1.1.0"

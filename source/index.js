@@ -3,7 +3,6 @@
 // Import
 const { EventEmitter } = require('events')
 const { TaskGroup } = require('taskgroup')
-const ambi = require('ambi')
 const unbounded = require('unbounded')
 
 // Fetch raw listeners across versions
@@ -70,12 +69,9 @@ class EventEmitterGrouped extends EventEmitter {
 		listenerObjects.sort((a, b) => b.priority - a.priority)
 
 		// Add the tasks for the listeners
-		listenerObjects.forEach(function (listenerObject) {
+		listenerObjects.forEach(function ({ description, method }) {
 			// Bind to the task
-			tasks.addTask(listenerObject.description, function (complete) {
-				// Fire the listener, treating the callback as optional
-				ambi(listenerObject.method, ...args, complete)
-			})
+			tasks.addTask(description, { method, args, ambi: true })
 		})
 
 		// Return

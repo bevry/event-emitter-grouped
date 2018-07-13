@@ -1,5 +1,9 @@
 # History
 
+## v2.6.1 2018 July 13
+- Delegated ambi invocation to taskgroup, where it rightfully belongs
+- Updated dependencies
+
 ## v2.6.0 2018 July 13
 - More detailed and accurate task names for listeners
 - Better listener argument length detection thanks to [bounded](https://github.com/bevry/bounded)
