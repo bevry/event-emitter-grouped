@@ -1,36 +1,10 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
-  "homepage": "https://github.com/bevry/event-emitter-grouped",
+  "homepage": "ssh://git@github.com/bevry/event-emitter-grouped",
   "license": "MIT",
-  "badges": {
-    "list": [
-      "travisci",
-      "npmversion",
-      "npmdownloads",
-      "daviddm",
-      "daviddmdev",
-      "---",
-      "slackin",
-      "patreon",
-      "gratipay",
-      "flattr",
-      "paypal",
-      "bitcoin",
-      "wishlist"
-    ],
-    "config": {
-      "patreonUsername": "bevry",
-      "gratipayUsername": "bevry",
-      "flattrUsername": "balupton",
-      "paypalURL": "https://bevry.me/paypal",
-      "bitcoinURL": "https://bevry.me/bitcoin",
-      "wishlistURL": "https://bevry.me/wishlist",
-      "slackinURL": "https://slack.bevry.me"
-    }
-  },
   "keywords": [
     "event",
     "events",
@@ -44,28 +18,55 @@
     "completion",
     "callback"
   ],
-  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me), 2011-2012 Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "patreon",
+      "opencollective",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist",
+      "---",
+      "slackin"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "opencollectiveUsername": "bevry",
+      "flattrUsername": "balupton",
+      "paypalURL": "https://bevry.me/paypal",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
+  },
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me), 2011-2012 Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)"
   ],
   "bugs": {
-    "url": "https://github.com/bevry/event-emitter-grouped/issues"
+    "url": "ssh://git@github.com/bevry/event-emitter-grouped/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/bevry/event-emitter-grouped.git"
+    "url": "ssh://git@github.com/bevry/event-emitter-grouped.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=0.8"
   },
   "editions": [
     {
       "description": "Source + ESNext + Require",
-      "entry": "source/index.js",
+      "entry": "index.js",
       "directory": "source",
       "syntaxes": [
         "javascript",
@@ -82,7 +83,7 @@
     },
     {
       "description": "Babel Compiled + ES2015 + Require",
-      "entry": "es2015/index.js",
+      "entry": "index.js",
       "directory": "es2015",
       "syntaxes": [
         "javascript",
@@ -93,37 +94,43 @@
   ],
   "main": "index.js",
   "browser": "es2015/index.js",
-  "scripts": {
-    "setup": "npm install",
-    "clean": "rm -Rf ./docs ./es2015",
-    "compile": "npm run compile:es2015",
-    "compile:es2015": "babel ./source --out-dir ./es2015 --presets es2015",
-    "meta": "npm run meta:docs && npm run meta:projectz",
-    "meta:docs": "documentation build -f html -o ./docs -g --shallow ./source/**.js",
-    "meta:projectz": "projectz compile",
-    "prepare": "npm run compile && npm run test && npm run meta",
-    "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push",
-    "release:publish": "npm publish",
-    "release:tag": "git tag v$npm_package_version -a",
-    "release:push": "git push origin master && git push origin --tags",
-    "pretest": "npm run test:eslint",
-    "test:eslint": "eslint ./source",
-    "test": "node --harmony -e \"require('editions').requirePackage(process.cwd(), require, 'test.js')\""
-  },
   "dependencies": {
-    "ambi": "~2.5.0",
-    "editions": "^1.1.1",
-    "taskgroup": "^5.0.0"
+    "ambi": "^3.0.0",
+    "editions": "^1.3.4",
+    "taskgroup": "^5.0.0",
+    "unbounded": "^1.1.0"
   },
   "devDependencies": {
-    "assert-helpers": "^4.4.0",
-    "babel-cli": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "documentation": "^4.0.0-beta5",
-    "eslint": "^2.11.1",
-    "eslint-plugin-babel": "^3.2.0",
-    "joe": "^1.6.0",
-    "joe-reporter-console": "^1.2.1",
-    "projectz": "^1.1.5"
+    "assert-helpers": "^4.5.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "documentation": "^8.0.0",
+    "eslint": "^5.1.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "joe": "^2.0.2",
+    "joe-reporter-console": "^2.0.1",
+    "projectz": "^1.4.0",
+    "surge": "^0.20.1"
+  },
+  "scripts": {
+    "our:setup": "npm run our:setup:npm",
+    "our:setup:npm": "npm install",
+    "our:clean": "rm -Rf ./docs ./es2015 ./es5 ./out",
+    "our:compile": "npm run our:compile:es2015",
+    "our:compile:es2015": "babel ./source --out-dir ./es2015 --presets es2015",
+    "our:meta": "npm run our:meta:docs && npm run our:meta:projectz",
+    "our:meta:docs": "documentation build -f html -o ./docs -g --shallow ./source/**.js",
+    "our:meta:projectz": "projectz compile",
+    "our:verify": "npm run our:verify:eslint",
+    "our:verify:eslint": "eslint --fix ./source",
+    "our:deploy": "echo no need for this project",
+    "our:test": "npm run our:verify && npm test",
+    "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
+    "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
+    "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
+    "our:release:check-dirty": "git diff --exit-code",
+    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
+    "our:release:push": "git push origin master && git push origin --tags",
+    "test": "node --harmony ./test.js --joe-reporter=console"
   }
 }

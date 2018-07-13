@@ -1,10 +1,17 @@
 # History
 
-## v2.5.0 2016 June 4
+## v2.6.0 2018 July 13
+- More detailed and accurate task names for listeners
+- Better listener argument length detection thanks to [bounded](https://github.com/bevry/bounded)
+- Better listener argument length detection on `once` events on Node v10 and Node v8
+- Updated base files using [boundation](https://github.com/bevry/boundation)
 - Updated dependencies
+
+## v2.5.0 2016 June 4
 - Converted from CoffeeScript to ESNext
 - Removed `attach` and `inheritInto`, they were not used by anybody
 - Export EventEmitterGrouped directly, alias as static property for backwards compatibility
+- Updated dependencies
 
 ## v2.4.3 2014 June 24
 - Fixed publish

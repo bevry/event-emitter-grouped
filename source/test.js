@@ -1,6 +1,8 @@
+'use strict'
+
 // Import
-const {equal, errorEqual} = require('assert-helpers')
-const {EventEmitterGrouped} = require('../')
+const { equal, errorEqual } = require('assert-helpers')
+const { EventEmitterGrouped } = require('../')
 const joe = require('joe')
 
 
@@ -89,7 +91,7 @@ joe.suite('EventEmitterGrouped', function (suite, test) {
 		eventEmitter.once('once-test', function (opts, next) {
 			++first
 			setTimeout(function () {
-				equal(second, 2)
+				equal(second, 2, 'asynchronous callback: second value')
 				++first
 				next()
 			}, 500)
@@ -97,19 +99,19 @@ joe.suite('EventEmitterGrouped', function (suite, test) {
 
 		// Synchronous
 		eventEmitter.once('once-test', function () {
-			equal(first, 1)
+			equal(first, 1, 'synchronous callback: first value')
 			second += 2
 		})
 
 		// Correct amount of listeners?
-		equal(eventEmitter.listeners('once-test').length, 2)
+		equal(eventEmitter.listeners('once-test').length, 2, 'commencement: remaining listening')
 
 		// Emit and check
 		eventEmitter.emitParallel('once-test', null, function (err) {
 			errorEqual(err, null)
-			equal(first, 2)
-			equal(second, 2)
-			equal(eventEmitter.listeners('once-test').length, 0)
+			equal(first, 2, 'completion callback: first value')
+			equal(second, 2, 'completion callback: second value')
+			equal(eventEmitter.listeners('once-test').length, 0, 'completion callback: remaining listeners')
 			done()
 		})
 	})

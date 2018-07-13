@@ -1,7 +1,22 @@
+'use strict'
+
 // Import
-const {EventEmitter} = require('events')
-const {TaskGroup} = require('taskgroup')
+const { EventEmitter } = require('events')
+const { TaskGroup } = require('taskgroup')
 const ambi = require('ambi')
+const unbounded = require('unbounded')
+
+// Fetch raw listeners across versions
+// Node v10 defines this on the EventEmitter prototype
+// Node v8 omits this
+// Node version below 8 don't need this, as their `listeners` function is the same as this
+// However, due to the inconsistencies, this is what we have
+function rawListeners (eventName) {
+	const events = this._events[eventName]
+	if (events == null) return []
+	if (typeof events === 'function') return [events]
+	return events
+}
 
 /**
 Events EventEmitter to allow you to execute events in serial or parallel.
@@ -35,29 +50,20 @@ class EventEmitterGrouped extends EventEmitter {
 		const tasks = new TaskGroup(`EventEmitterGrouped for ${eventName}`).done(next)
 
 		// Convert the listeners into objects that we can use
-		const listenerObjects = this.listeners(eventName).slice().map((listener) => {
-			// Prepare
-			const listenerObject = {}
-
+		const listenerObjects = (this.rawListeners || rawListeners).call(this, eventName).slice().map((listener) => {
 			// The `once` method will actually wrap around the original listener, which isn't what we want for the introspection
 			// So we must pass fireWithOptionalCallback an array of the method to fire, and the method to introspect
 			// https://github.com/bevry/docpad/issues/462
 			// https://github.com/joyent/node/commit/d1b4dcd6acb1d1c66e423f7992dc6eec8a35c544
-			if ( listener.listener ) {  // this is a `once` thing
-				listenerObject.actual = listener.listener
-				listenerObject.fire   = [listener.bind(me), listener.listener]
-			}
-			else {
-				listenerObject.actual = listener
-				listenerObject.fire   = listener.bind(me)
-			}
+			const method = listener.listener ? unbounded.binder.call(unbounded.define(listener, listener.listener), me) : unbounded.binder.call(listener, me)
+			const length = method.unbounded.length
+			const priority = method.unbounded.priority || 0
+			const name = method.unbounded.name
+			const description = `Listener for [${eventName}] with name [${name}], length [${length}], priority [${priority}]`
+			const result = { method, length, priority, name, description }
 
-			// Defaults
-			listenerObject.priority = listenerObject.actual.priority || 0
-			listenerObject.name     = listenerObject.name || `Untitled listener for [${eventName}] with priority [${listenerObject.priority}]`
-
-			// Return the new listenerObject
-			return listenerObject
+			// Return
+			return result
 		})
 
 		// Sort the listeners by highest priority first
@@ -66,9 +72,9 @@ class EventEmitterGrouped extends EventEmitter {
 		// Add the tasks for the listeners
 		listenerObjects.forEach(function (listenerObject) {
 			// Bind to the task
-			tasks.addTask(listenerObject.name, function (complete) {
+			tasks.addTask(listenerObject.description, function (complete) {
 				// Fire the listener, treating the callback as optional
-				ambi(listenerObject.fire, ...args, complete)
+				ambi(listenerObject.method, ...args, complete)
 			})
 		})
 
@@ -101,7 +107,7 @@ class EventEmitterGrouped extends EventEmitter {
 	@returns {TaskGroup}
 	*/
 	emitParallel (...args) {
-		return this.getListenerGroup(...args).setConfig({concurrency: 0}).run()
+		return this.getListenerGroup(...args).setConfig({ concurrency: 0 }).run()
 	}
 }
 
