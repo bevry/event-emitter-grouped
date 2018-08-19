@@ -61,6 +61,8 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 
 ## Usage
 
+[Complete API Documentation.](http://master.event-emitted-grouped.bevry.surge.sh/docs/)
+
 ``` javascript
 // Importer
 var EventEmitterGrouped = require('event-emitter-grouped')
@@ -116,8 +118,6 @@ hello in parallel started
 hello in parallel finished
 */
 ```
-
-[Documentation.](http://rawgit.com/bevry/event-emitter-grouped/master/docs/)
 
 
 <!-- HISTORY/ -->
