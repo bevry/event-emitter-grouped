@@ -1,5 +1,8 @@
 # History
 
+## v2.7.0 2018 August 19
+- Updated base files using [boundation](https://github.com/bevry/boundation)
+
 ## v2.6.1 2018 July 13
 - Delegated ambi invocation to taskgroup, where it rightfully belongs
 - Updated dependencies
