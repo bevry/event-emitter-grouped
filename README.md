@@ -53,8 +53,8 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 
 <ul><li><code>event-emitter-grouped</code> aliases <code>event-emitter-grouped/index.js</code> which uses <a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
 <li><code>event-emitter-grouped/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>event-emitter-grouped/edition:browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
-<li><code>event-emitter-grouped/edition:node:0.8/index.js</code> is esnext compiled for node.js >=0.8 with require for modules</li></ul>
+<li><code>event-emitter-grouped/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
+<li><code>event-emitter-grouped/edition-node-0.8/index.js</code> is esnext compiled for node.js >=0.8 with require for modules</li></ul>
 
 <!-- /INSTALL -->
 
