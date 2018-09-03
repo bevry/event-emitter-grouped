@@ -1,7 +1,7 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "https://github.com/bevry/event-emitter-grouped",
   "license": "MIT",

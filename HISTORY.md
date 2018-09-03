@@ -1,5 +1,8 @@
 # History
 
+## v2.7.1 2018 September 3
+- Updated base files and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.7.0 2018 August 19
 - Updated base files and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
 
