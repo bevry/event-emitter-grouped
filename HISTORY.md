@@ -12,7 +12,7 @@
 
 ## v2.6.0 2018 July 13
 - More detailed and accurate task names for listeners
-- Better listener argument length detection thanks to [bounded](https://github.com/bevry/bounded)
+- Better listener argument length detection thanks to [unbounded](https://github.com/bevry/unbounded)
 - Better listener argument length detection on `once` events on Node v10 and Node v8
 - Updated base files using [boundation](https://github.com/bevry/boundation)
 - Updated dependencies
