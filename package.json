@@ -120,7 +120,7 @@
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.2",
     "projectz": "^1.4.0",
-    "surge": "^0.20.1"
+    "surge": "^0.21.3"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition:* ./es2015 ./es5 ./out",
