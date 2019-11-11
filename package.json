@@ -106,7 +106,7 @@
   "browser": "edition-browsers/index.js",
   "dependencies": {
     "editions": "^2.0.2",
-    "taskgroup": "^5.0.0",
+    "taskgroup": "^6.0.0",
     "unbounded": "^1.1.0"
   },
   "devDependencies": {
