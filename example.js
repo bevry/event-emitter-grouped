@@ -19,7 +19,7 @@ emitter.on('hello', function () {
 })
 
 // Bind a prioritized event
-function vipListener () {
+function vipListener() {
 	console.log('\tvip started and finished')
 }
 vipListener.priority = 1

@@ -53,7 +53,7 @@ class EventEmitterGrouped extends EventEmitter {
 		const listenerObjects = (this.rawListeners || rawListeners)
 			.call(this, eventName)
 			.slice()
-			.map(listener => {
+			.map((listener) => {
 				// The `once` method will actually wrap around the original listener, which isn't what we want for the introspection
 				// So we must pass fireWithOptionalCallback an array of the method to fire, and the method to introspect
 				// https://github.com/bevry/docpad/issues/462
@@ -78,7 +78,7 @@ class EventEmitterGrouped extends EventEmitter {
 		listenerObjects.sort((a, b) => b.priority - a.priority)
 
 		// Add the tasks for the listeners
-		listenerObjects.forEach(function({ description, method }) {
+		listenerObjects.forEach(function ({ description, method }) {
 			// Bind to the task
 			tasks.addTask(description, { method, args, ambi: true })
 		})

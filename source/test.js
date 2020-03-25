@@ -8,23 +8,23 @@ const kava = require('kava')
 // =====================================
 // Event Emitter Enhanced
 
-kava.suite('EventEmitterGrouped', function(suite, test) {
+kava.suite('EventEmitterGrouped', function (suite, test) {
 	let eventEmitter = null
 
-	test('should construct', function() {
+	test('should construct', function () {
 		eventEmitter = new EventEmitterGrouped()
 	})
 
 	// Serial
-	test('should work in serial', function(done) {
+	test('should work in serial', function (done) {
 		// Prepare
 		let first = 0,
 			second = 0
 
 		// Asynchronous
-		eventEmitter.on('serial-test', function(opts, next) {
+		eventEmitter.on('serial-test', function (opts, next) {
 			++first
-			setTimeout(function() {
+			setTimeout(function () {
 				equal(second, 0)
 				++first
 				next()
@@ -32,7 +32,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		})
 
 		// Synchronous
-		eventEmitter.on('serial-test', function() {
+		eventEmitter.on('serial-test', function () {
 			equal(first, 2)
 			second += 2
 		})
@@ -41,7 +41,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		equal(eventEmitter.listeners('serial-test').length, 2)
 
 		// Emit and check
-		eventEmitter.emitSerial('serial-test', null, function(err) {
+		eventEmitter.emitSerial('serial-test', null, function (err) {
 			errorEqual(err, null)
 			equal(first, 2)
 			equal(second, 2)
@@ -50,15 +50,15 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 	})
 
 	// Parallel
-	test('should work in parallel', function(done) {
+	test('should work in parallel', function (done) {
 		// Prepare
 		let first = 0,
 			second = 0
 
 		// Asynchronous
-		eventEmitter.on('parallel-test', function(opts, next) {
+		eventEmitter.on('parallel-test', function (opts, next) {
 			++first
-			setTimeout(function() {
+			setTimeout(function () {
 				equal(second, 2)
 				++first
 				next()
@@ -66,7 +66,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		})
 
 		// Synchronous
-		eventEmitter.on('parallel-test', function() {
+		eventEmitter.on('parallel-test', function () {
 			equal(first, 1)
 			second += 2
 		})
@@ -75,7 +75,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		equal(eventEmitter.listeners('parallel-test').length, 2)
 
 		// Emit and check
-		eventEmitter.emitParallel('parallel-test', null, function(err) {
+		eventEmitter.emitParallel('parallel-test', null, function (err) {
 			errorEqual(err, null)
 			equal(first, 2)
 			equal(second, 2)
@@ -84,15 +84,15 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 	})
 
 	// Parallel
-	test('should work with once', function(done) {
+	test('should work with once', function (done) {
 		// Prepare
 		let first = 0,
 			second = 0
 
 		// Asynchronous
-		eventEmitter.once('once-test', function(opts, next) {
+		eventEmitter.once('once-test', function (opts, next) {
 			++first
-			setTimeout(function() {
+			setTimeout(function () {
 				equal(second, 2, 'asynchronous callback: second value')
 				++first
 				next()
@@ -100,7 +100,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		})
 
 		// Synchronous
-		eventEmitter.once('once-test', function() {
+		eventEmitter.once('once-test', function () {
 			equal(first, 1, 'synchronous callback: first value')
 			second += 2
 		})
@@ -113,7 +113,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		)
 
 		// Emit and check
-		eventEmitter.emitParallel('once-test', null, function(err) {
+		eventEmitter.emitParallel('once-test', null, function (err) {
 			errorEqual(err, null)
 			equal(first, 2, 'completion callback: first value')
 			equal(second, 2, 'completion callback: second value')
@@ -127,7 +127,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 	})
 
 	// Off
-	test('should work with off', function(done) {
+	test('should work with off', function (done) {
 		// Prepare
 		let counterA = 0,
 			counterB = 0
@@ -156,7 +156,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		equal(eventEmitter.listeners('off-test').length, 1)
 
 		// Emit and check
-		eventEmitter.emitSerial('off-test', null, function(err) {
+		eventEmitter.emitSerial('off-test', null, function (err) {
 			errorEqual(err, null)
 			equal(counterA, 0)
 			equal(counterB, 1)
@@ -165,7 +165,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 	})
 
 	// Priorities
-	test('should work with priorities', function(done) {
+	test('should work with priorities', function (done) {
 		// Prepare
 		let counterA = 0,
 			counterB = 0,
@@ -205,7 +205,7 @@ kava.suite('EventEmitterGrouped', function(suite, test) {
 		equal(eventEmitter.listeners('priority-test').length, 3)
 
 		// Emit and check
-		eventEmitter.emitSerial('priority-test', null, function(err) {
+		eventEmitter.emitSerial('priority-test', null, function (err) {
 			errorEqual(err, null)
 			equal(counterA, 1)
 			equal(counterB, 1)

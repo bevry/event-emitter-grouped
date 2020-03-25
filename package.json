@@ -1,22 +1,25 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "3.4.0",
+  "version": "4.0.0",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "https://github.com/bevry/event-emitter-grouped",
   "license": "MIT",
   "keywords": [
-    "event",
-    "events",
-    "emitter",
-    "eventemitter",
     "async",
-    "sync",
+    "browser",
+    "callback",
+    "completion",
+    "emitter",
+    "event",
+    "eventemitter",
+    "events",
+    "flow",
     "parallel",
     "serial",
-    "flow",
-    "completion",
-    "callback"
+    "sync",
+    "typed",
+    "types"
   ],
   "badges": {
     "list": [
@@ -56,8 +59,7 @@
   ],
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
-    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)",
-    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
+    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/event-emitter-grouped/issues"
@@ -67,11 +69,11 @@
     "url": "https://github.com/bevry/event-emitter-grouped.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "editions": [
     {
-      "description": "esnext source code with require for modules",
+      "description": "ESNext source code for Node.js with Require for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -80,12 +82,12 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12",
+        "node": "10 || 12",
         "browsers": false
       }
     },
     {
-      "description": "esnext compiled for browsers with require for modules",
+      "description": "ESNext compiled for web browsers with Require for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
       "tags": [
@@ -102,27 +104,27 @@
   "main": "source/index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "taskgroup": "^6.4.0",
-    "unbounded": "^2.2.0"
+    "taskgroup": "^6.5.0",
+    "unbounded": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
-    "assert-helpers": "^5.8.0",
-    "eslint": "^6.7.2",
-    "eslint-config-bevry": "^2.2.0",
-    "eslint-config-prettier": "^6.7.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "assert-helpers": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-bevry": "^2.3.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "jsdoc": "^3.6.3",
-    "kava": "^4.3.0",
+    "kava": "^4.4.0",
     "minami": "^1.2.3",
-    "prettier": "^1.19.1",
-    "projectz": "^1.15.0",
+    "prettier": "^2.0.2",
+    "projectz": "^1.19.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.5.0"
+    "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -143,9 +145,9 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify:directory": "valid-directory",
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
-    "our:verify:prettier": "prettier --write ./source/**",
+    "our:verify:prettier": "prettier --write .",
     "test": "node ./source/test.js"
   },
   "eslintConfig": {
@@ -165,7 +167,10 @@
           [
             "@babel/preset-env",
             {
-              "targets": "defaults",
+              "targets": {
+                "esmodules": false,
+                "browsers": "defaults"
+              },
               "modules": false
             }
           ]
