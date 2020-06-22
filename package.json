@@ -111,7 +111,7 @@
   "browser": "edition-browsers/index.js",
   "dependencies": {
     "taskgroup": "7.7.0",
-    "unbounded": "3.4.0"
+    "unbounded": "3.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
