@@ -1771,12 +1771,19 @@ extend@~3.0.2:
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
-extendr@5.9.0, extendr@^5.5.0, extendr@^5.7.0:
+extendr@5.9.0:
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/extendr/-/extendr-5.9.0.tgz#8cfebe4870bc0197e990d5d1416375534dbdc673"
   integrity sha512-eDmfkqSRXPrTguRZpDHYptEphgl67qlq3FOO+zWmI1q8CqOeJulYdTVIp9pNGZ6KQfTo4Mm61H2B0fB66Ej1hQ==
   dependencies:
     typechecker "7.5.0"
+
+extendr@^5.10.0, extendr@^5.5.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/extendr/-/extendr-5.10.0.tgz#0c3afd261220eace50ec66394ce0f643073134ed"
+  integrity sha512-F1rkARf8rc5nuzljYD6lBE5O1kzTFkb5p6ir+mC1S0cRqiKG6AYgcKQEHmqAqA9EDDFJdnmW+S36R4J+XNl8pA==
+  dependencies:
+    typechecker "7.10.0"
 
 external-editor@^3.0.3:
   version "3.1.0"
@@ -3650,15 +3657,15 @@ tarr@1.1.0:
     fstream ">=1.0.12"
     inherits "2"
 
-taskgroup@7.11.0, taskgroup@^7.6.0:
-  version "7.11.0"
-  resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.11.0.tgz#6976cb73a19b3cac81fe92cbb42cdf38cb620420"
-  integrity sha512-/tMWVFIjHdVbuAMxlrAbG4B++r3B02pxgRKm+x9Z9W/ycBGXzkakh+vbaUw2dO6YJO6zxOEdSK0AjEwHdQqiVA==
+taskgroup@7.12.0, taskgroup@^7.6.0:
+  version "7.12.0"
+  resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.12.0.tgz#002dc8ba3031f2c553d60aaa42511bff06038033"
+  integrity sha512-xXMrDo/ayRXV4AP5TazfDm5Ly9dctQLZzqMgezTmaU1C7ArliyFyvf5uBNshkE/wdw/EIOurmRqyVTKOzp3azQ==
   dependencies:
     ambi "3"
     eachr "^4.5.0"
-    extendr "^5.7.0"
-    unbounded "3.4.0"
+    extendr "^5.10.0"
+    unbounded "3.7.0"
 
 taskgroup@7.7.0:
   version "7.7.0"
@@ -3754,6 +3761,11 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
+typechecker@7.10.0:
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-7.10.0.tgz#774e3dca5b4d328bcf843e382f794ad9a5b6fce4"
+  integrity sha512-e7yzPyPe1FGiyt8YwvxsZcR5/BI/RjRkfSQ9S0ilCBYFPED7qQ09dN0mpq6MlM67Vo+zRbfXc6ghYNYwBpQoaw==
+
 typechecker@7.5.0:
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-7.5.0.tgz#7e70c7e8d5ea6fc7b2ba626ab91d87578c2e306e"
@@ -3780,11 +3792,6 @@ uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
   integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
-
-unbounded@3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-3.4.0.tgz#0e44520a5c3e5759fbf15ef32ead744046cd20a4"
-  integrity sha512-d9LOcaNowWY9zEynpOzRCd7lpABqVD7svxkUBzZ6Va5QixAL0l3VjIXHwXli00ovHj19ABBcI9VeZYOke/hTsQ==
 
 unbounded@3.7.0, unbounded@^3.3.0:
   version "3.7.0"
