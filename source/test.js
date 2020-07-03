@@ -2,7 +2,7 @@
 
 // Import
 const { equal, errorEqual } = require('assert-helpers')
-const { EventEmitterGrouped } = require('./')
+const { EventEmitterGrouped } = require('./index.js')
 const kava = require('kava')
 
 // =====================================
