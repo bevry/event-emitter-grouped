@@ -1,7 +1,7 @@
 {
   "title": "Event Emitter Grouped",
   "name": "event-emitter-grouped",
-  "version": "4.17.0",
+  "version": "4.18.0",
   "description": "Emit events in serial or parallel with support for synchronous and asynchronous listeners",
   "homepage": "https://github.com/bevry/event-emitter-grouped",
   "license": "MIT",
@@ -79,7 +79,7 @@
   },
   "editions": [
     {
-      "description": "ESNext source code for Node.js 10 || 12 || 14 with Require for modules",
+      "description": "ESNext source code for Node.js 10 || 12 || 14 || 16 with Require for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -89,7 +89,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14",
+        "node": "10 || 12 || 14 || 16",
         "browsers": false
       }
     },
@@ -112,15 +112,15 @@
   "main": "source/index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "taskgroup": "^7.17.0",
-    "unbounded": "^3.13.0"
+    "taskgroup": "^7.18.0",
+    "unbounded": "^3.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
     "@babel/preset-env": "^7.14.8",
-    "@bevry/update-contributors": "^1.18.0",
+    "@bevry/update-contributors": "^1.19.0",
     "assert-helpers": "^8.2.0",
     "eslint": "^7.31.0",
     "eslint-config-bevry": "^3.23.0",
@@ -128,7 +128,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^3.4.0",
     "jsdoc": "^3.6.7",
-    "kava": "^5.13.0",
+    "kava": "^5.14.0",
     "prettier": "^2.3.2",
     "projectz": "^2.18.0",
     "surge": "^0.23.0",
