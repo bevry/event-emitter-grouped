@@ -35,7 +35,7 @@ Emit events in serial or parallel with support for synchronous and asynchronous 
 
 ## Usage
 
-[Complete API Documentation.](http://master.event-emitter-grouped.bevry.surge.sh/docs/index.html)
+[Complete API Documentation.](http://master.event-emitter-grouped.bevry.surge.sh/docs/)
 
 ```javascript
 // Importer
@@ -108,7 +108,7 @@ hello in parallel finished
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/event-emitter-grouped@4.18.0'
+    import * as pkg from '//dev.jspm.io/event-emitter-grouped@4.19.0'
 </script>
 ```
 
