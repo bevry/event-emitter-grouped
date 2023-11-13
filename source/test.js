@@ -109,7 +109,7 @@ kava.suite('EventEmitterGrouped', function (suite, test) {
 		equal(
 			eventEmitter.listeners('once-test').length,
 			2,
-			'commencement: remaining listening',
+			'commencement: remaining listening'
 		)
 
 		// Emit and check
@@ -120,7 +120,7 @@ kava.suite('EventEmitterGrouped', function (suite, test) {
 			equal(
 				eventEmitter.listeners('once-test').length,
 				0,
-				'completion callback: remaining listeners',
+				'completion callback: remaining listeners'
 			)
 			done()
 		})

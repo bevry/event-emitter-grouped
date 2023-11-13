@@ -46,7 +46,7 @@ class EventEmitterGrouped extends EventEmitter {
 
 		// Prepare tasks
 		const tasks = new TaskGroup(`EventEmitterGrouped for ${eventName}`).done(
-			next,
+			next
 		)
 
 		// Convert the listeners into objects that we can use
@@ -61,7 +61,7 @@ class EventEmitterGrouped extends EventEmitter {
 				const method = listener.listener
 					? unbounded.binder.call(
 							unbounded.define(listener, listener.listener),
-							me,
+							me
 					  )
 					: unbounded.binder.call(listener, me)
 				const length = method.unbounded.length
