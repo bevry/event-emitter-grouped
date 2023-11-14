@@ -107,7 +107,7 @@ hello in parallel finished
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/event-emitter-grouped@6.1.0'
+    import * as pkg from '//dev.jspm.io/event-emitter-grouped@6.2.0'
 </script>
 ```
 
