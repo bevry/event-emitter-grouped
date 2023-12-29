@@ -4,7 +4,7 @@
 
 Unless stated otherwise all works are:
 
--   Copyright &copy; 2013+ [Benjamin Lupton](https://balupton.com)
+-   Copyright &copy; [Benjamin Lupton](https://balupton.com)
 
 and licensed under:
 

@@ -147,7 +147,7 @@ This project provides its type information via inline [JSDoc Comments](http://us
 
 #### Authors
 
--   2013+ [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
+-   [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
 
 #### Maintainers
 
@@ -215,7 +215,7 @@ This project provides its type information via inline [JSDoc Comments](http://us
 
 Unless stated otherwise all works are:
 
--   Copyright &copy; 2013+ [Benjamin Lupton](https://balupton.com)
+-   Copyright &copy; [Benjamin Lupton](https://balupton.com)
 
 and licensed under:
 

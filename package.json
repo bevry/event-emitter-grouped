@@ -71,9 +71,9 @@
       "npmPackageName": "event-emitter-grouped"
     }
   },
-  "author": "2013+ Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)",
+  "author": "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)",
   "authors": [
-    "2013+ Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton): Accelerating collaborative wisdom."
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton): Accelerating collaborative wisdom."
   ],
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton): Accelerating collaborative wisdom."
@@ -187,7 +187,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^5.1.2",
     "jsdoc": "^4.0.2",
-    "kava": "^7.7.0",
+    "kava": "^7.8.0",
     "prettier": "^3.1.1",
     "projectz": "^4.1.1",
     "valid-directory": "^4.8.0"
