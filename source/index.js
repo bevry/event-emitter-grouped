@@ -62,7 +62,7 @@ class EventEmitterGrouped extends EventEmitter {
 					? unbounded.binder.call(
 							unbounded.define(listener, listener.listener),
 							me
-					  )
+						)
 					: unbounded.binder.call(listener, me)
 				const length = method.unbounded.length
 				const priority = method.unbounded.priority || 0
